@@ -5,6 +5,8 @@ class GearsController < ApplicationController
   # GET /gears.json
   def index
     @gears = Gear.all
+    # @brand = Brand.find(:all)
+    # @type = Type.find(:all)
   end
 
   # GET /gears/1
@@ -15,6 +17,8 @@ class GearsController < ApplicationController
   # GET /gears/new
   def new
     @gear = Gear.new
+    @brand = Brand.all
+    @type = Type.all
   end
 
   # GET /gears/1/edit
@@ -25,7 +29,8 @@ class GearsController < ApplicationController
   # POST /gears.json
   def create
     @gear = Gear.new(gear_params)
-
+    @brand = Brand.all
+    @type = Type.all
     respond_to do |format|
       if @gear.save
         format.html { redirect_to @gear, notice: "Gear was successfully created." }
