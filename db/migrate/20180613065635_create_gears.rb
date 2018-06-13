@@ -5,8 +5,9 @@ class CreateGears < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :image_url
       t.decimal :price
-      t.string :inventory
-
+      t.integer :inventory
+      t.references :brand, foreign_key: true
+      t.references :type, foreign_key: true
       t.timestamps
     end
   end
