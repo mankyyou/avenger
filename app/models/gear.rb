@@ -3,4 +3,9 @@ class Gear < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   belongs_to :brand
   belongs_to :type
+  validates :name, presence: true, length: {minimum: 5, maximum: 30}
+  validates :description, presence: true, length: {minimum: 10}
+  validates :image, presence: true
+  validates :price, presence: true, numericality: {greater_than_or_equal_to: 1}
+  validates :inventory, presence: true, numericality: {greater_than_or_equal_to: 1}
 end
