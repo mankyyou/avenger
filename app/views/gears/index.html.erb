@@ -25,7 +25,7 @@
       <tr>
         <td><%= gear.name %></td>
         <td><%= gear.description %></td>
-        <td><%= gear.image_url %></td>
+        <td><%= image_tag gear.image.url(:medium),:size=>"80x50"%></td>
         <td><%= gear.price %></td>
         <td><%= gear.inventory %></td>
         <td><%= link_to 'Show', gear %></td>
