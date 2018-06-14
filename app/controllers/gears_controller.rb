@@ -4,9 +4,11 @@ class GearsController < ApplicationController
   # GET /gears
   # GET /gears.json
   def index
-    @gears = Gear.all
-    # @brand = Brand.find(:all)
-    # @type = Type.find(:all)
+    if params[:query].present?
+      @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 1)
+    else
+      @gears = Gear.all.paginate(page: params[:page], per_page: 1)
+    end
   end
 
   # GET /gears/1

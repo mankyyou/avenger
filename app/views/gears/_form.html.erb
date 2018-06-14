@@ -29,6 +29,7 @@
         <%= form.label :image%>
 
           <%= form.file_field :image %>
+            
 
       </div>
 
@@ -46,11 +47,13 @@
           <%= form.label :brand %>
           <!-- <%= form.collection_select :brand, Brand.order(:brandname),:id,:brandname, include_blank: true %> -->
           <%= form.select :brand_id, options_from_collection_for_select(Brand.all, :id, :brandname), {:include_blank => 'Please choose brand for gear'} %>
+         
       </div>
       <div class="field">
           <%= form.label :type %>
           <!-- <%= form.collection_select(:type, Type.all, :id, :typename ) %> -->
           <%= form.select :type_id, options_from_collection_for_select(Type.all, :id, :typename), {:include_blank => 'Please choose type for gear'} %>
+         
       </div>
       <div class="actions">
         <%= form.submit %>

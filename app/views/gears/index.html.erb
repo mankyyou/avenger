@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Gears</h1>
+<%# <input type="text" name="query" id="query" placeholder="Nhập tên" >
+<input type="submit" name="commit" value="Search"> %>
 
+  <%= form_tag gears_path, method: :get do %>
+  <%= text_field_tag "query", params[:query], placeholder: "Name" %>
+  <%= submit_tag "Search!" %>
+  <% end %>
 <table>
   <thead>
     <tr>
@@ -19,7 +25,7 @@
       <tr>
         <td><%= gear.name %></td>
         <td><%= gear.description %></td>
-        <td><%= gear.image_url %></td>
+        <td><%= image_tag gear.image.url(:medium),:size=>"80x50"%></td>
         <td><%= gear.price %></td>
         <td><%= gear.inventory %></td>
         <td><%= link_to 'Show', gear %></td>
@@ -28,8 +34,9 @@
       </tr>
     <% end %>
   </tbody>
+  
 </table>
-
+<%= will_paginate @gears%>
 <br>
 
 <%= link_to 'New Gear', new_gear_path %>
