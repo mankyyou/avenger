@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_12_084000) do
+ActiveRecord::Schema.define(version: 2018_06_13_071711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,17 @@ ActiveRecord::Schema.define(version: 2018_06_12_084000) do
     t.text "description"
     t.string "image_url"
     t.decimal "price"
-    t.string "inventory"
+    t.integer "inventory"
+    t.bigint "brand_id"
+    t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["brand_id"], name: "index_gears_on_brand_id"
+    t.index ["type_id"], name: "index_gears_on_type_id"
   end
 
   create_table "types", force: :cascade do |t|
@@ -41,4 +45,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_084000) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "gears", "brands"
+  add_foreign_key "gears", "types"
 end

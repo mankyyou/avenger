@@ -4,7 +4,14 @@ class GearsController < ApplicationController
   # GET /gears
   # GET /gears.json
   def index
-    @gears = Gear.all
+    # @brand = Brand.find(:all)
+    # @type = Type.find(:all)
+    # @gears = Gear.all.paginate(page: params[:page], per_page: 3)
+    if params[:query].present?
+      @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 1)
+    else
+      @gears = Gear.all.paginate(page: params[:page], per_page: 1)
+    end
   end
 
   # GET /gears/1
@@ -15,6 +22,8 @@ class GearsController < ApplicationController
   # GET /gears/new
   def new
     @gear = Gear.new
+    @brand = Brand.all
+    @type = Type.all
   end
 
   # GET /gears/1/edit
@@ -25,7 +34,8 @@ class GearsController < ApplicationController
   # POST /gears.json
   def create
     @gear = Gear.new(gear_params)
-
+    @brand = Brand.all
+    @type = Type.all
     respond_to do |format|
       if @gear.save
         format.html { redirect_to @gear, notice: "Gear was successfully created." }
@@ -70,6 +80,6 @@ class GearsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def gear_params
-    params.require(:gear).permit(:name, :description, :image_url, :price, :inventory, :image)
+    params.require(:gear).permit(:name, :description, :image_url, :price, :inventory, :image, :brand_id, :type_id)
   end
 end
