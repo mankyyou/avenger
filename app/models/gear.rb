@@ -3,9 +3,22 @@ class Gear < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   belongs_to :brand
   belongs_to :type
+  has_many :line_items
+  has_many :orders, through: :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
   validates :name, presence: true, length: {minimum: 5, maximum: 30}
   validates :description, presence: true, length: {minimum: 10}
   validates :image, presence: true
   validates :price, presence: true, numericality: {greater_than_or_equal_to: 1}
   validates :inventory, presence: true, numericality: {greater_than_or_equal_to: 1}
+
+  private
+
+  # ensure that there are no line items referencing this product
+  def ensure_not_referenced_by_any_line_item
+    unless line_items.empty?
+      errors.add(:base, "Line Items present")
+      throw :abort
+    end
+  end
 end
