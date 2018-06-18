@@ -1,0 +1,25 @@
+<p id="notice">
+    <%= notice %>
+</p>
+<h1>Your Pragmatic Catalog</h1>
+<% @gears.each do |gear| %>
+    <div class="entry">
+        <%= image_tag gear.image.url(:medium)%>
+            <h3>
+                <%= gear.name %>
+            </h3>
+            <%= sanitize(gear.description) %>
+                <h3>
+                    <%=gear.brand.brandname%>
+                </h3>
+                <h3>
+                    <%=gear.type.typename%>
+                </h3>
+                <div class="price_line">
+                    <span class="price">
+                        <%= gear.price %>
+                    </span>
+                    <%= button_to 'Add to Cart', line_items_path(gear_id: gear),remote: true %>
+                </div>
+    </div>
+    <% end %>

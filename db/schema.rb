@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_14_012954) do
-  # ActiveRecord::Schema.define(version: 2018_06_13_071711) do
+# ActiveRecord::Schema.define(version: 2018_06_14_012954) do
+# ActiveRecord::Schema.define(version: 2018_06_13_071711) do
+ActiveRecord::Schema.define(version: 2018_06_18_065733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +46,28 @@ ActiveRecord::Schema.define(version: 2018_06_14_012954) do
     t.index ["type_id"], name: "index_gears_on_type_id"
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "gear_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
+    t.bigint "order_id"
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["gear_id"], name: "index_line_items_on_gear_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.integer "phone"
+    t.string "email"
+    t.integer "pay_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "types", force: :cascade do |t|
     t.string "typename"
     t.datetime "created_at", null: false
@@ -53,4 +76,7 @@ ActiveRecord::Schema.define(version: 2018_06_14_012954) do
 
   add_foreign_key "gears", "brands"
   add_foreign_key "gears", "types"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "gears"
+  add_foreign_key "line_items", "orders"
 end

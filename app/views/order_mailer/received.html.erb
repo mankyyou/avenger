@@ -1,0 +1,6 @@
+Dear <%= @order.name %>
+Cám ơn bạn đã đặt hàng tại AvengerGear.
+Giỏ hàng của bạn bao gồm:
+<%= render @order.line_items -%>
+Chúng tôi sẽ gửi mail cho bạn khi đơn hàng được giao tới!
+Love you!
