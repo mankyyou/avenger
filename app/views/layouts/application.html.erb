@@ -148,15 +148,15 @@
               <li><%= link_to "Home",store_index_path%></li>
 								<li><a href="index.html">Types</a>
 									<ul class="sub-menu">
-										<li><a href="index-2.html">Mouse</a></li>
-										<li><a href="index-3.html">Keyboard</a></li>
+                    <li><%= link_to "Mouse",phanloai_mouse_path%></li>
+										<li><%= link_to "Keyboard",phanloai_keyboard_path%></li>
 									</ul>
 								</li>
-								<li><a href="index.html">Brand </a>
+								<li><a >Brand </a>
 									<ul class="sub-menu">
-										<li><a href="index-2.html">Razer</a></li>
-										<li><a href="index-3.html">Logitech</a></li>
-                    <li><a href="index-3.html">Corsair</a></li>
+										<li><%= link_to "Razer",phanncc_razer_path%></li>
+                    <li><%= link_to "Logitech",phanncc_logitech_path%></li>
+                    <li><%= link_to "Corsair",phanncc_corsair_path%></li>
 									</ul>
 								</li>
                 <li class="li_login_disable"><%= link_to "Login",login_path%></li>
@@ -193,6 +193,8 @@
               <li><%= link_to "User",users_path%></li>
               <li><%= link_to "Order",orders_path%></li>
               <li><%= link_to "Gear",gears_path%></li>
+              <li><%= link_to "Brand",brands_path%></li>
+              <li><%= link_to "Type",types_path%></li>
               <li> <%= button_to "Logout",logout_path,method: :delete,:type=>"li" %></li>
               </ul>
              

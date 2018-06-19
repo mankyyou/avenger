@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
+  get "phanloai/mouse"
+  get "phanloai/keyboard"
+  get "phanncc/razer"
+  get "phanncc/logitech"
+  get "phanncc/corsair"
   resources :users
   resources :orders
   # get "store/index"
