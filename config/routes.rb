@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'charts/index'
+  get 'charts/show'
   resources :orders
   # get "store/index"
   resources :line_items
