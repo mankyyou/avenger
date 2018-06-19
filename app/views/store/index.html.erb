@@ -3,23 +3,25 @@
 </p>
 <h1>Your Pragmatic Catalog</h1>
 <% @gears.each do |gear| %>
-    <div class="entry">
-        <%= image_tag gear.image.url(:medium)%>
-            <h3>
-                <%= gear.name %>
-            </h3>
-            <%= sanitize(gear.description) %>
-                <h3>
-                    <%=gear.brand.brandname%>
-                </h3>
-                <h3>
-                    <%=gear.type.typename%>
-                </h3>
-                <div class="price_line">
-                    <span class="price">
-                        <%= gear.price %>
-                    </span>
-                    <%= button_to 'Add to Cart', line_items_path(gear_id: gear),remote: true %>
-                </div>
-    </div>
+ <div class="col-md-3">
+					
+                    <div class="single-features">
+							
+							<div class="product-img">
+								<a href="#">
+									<%= image_tag gear.image.url(:medium),:size=>"300x200"%>
+								</a>
+								<a class="modal-view" href="#" data-toggle="modal" data-target="#productModal">Details</a>
+								<div class="action-buttons">
+                                     <span><%= button_to 'Add to Cart', line_items_path(gear_id: gear),remote: true %></span>	
+								</div>
+							</div>
+							<div class="product-content">
+									<h5><a href="#"> <%= gear.name %> </a>$ <span class="pro-price"><%= gear.price %></span></h5>
+								
+							</div>
+						</div>
+                  
     <% end %>
+  	<%= will_paginate @gears%>
+      

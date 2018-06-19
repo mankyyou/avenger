@@ -5,9 +5,9 @@ class GearsController < ApplicationController
   # GET /gears.json
   def index
     if params[:query].present?
-      @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 1)
+      @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 5)
     else
-      @gears = Gear.all.paginate(page: params[:page], per_page: 1)
+      @gears = Gear.all.paginate(page: params[:page], per_page: 5)
     end
   end
 
