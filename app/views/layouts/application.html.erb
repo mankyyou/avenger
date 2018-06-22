@@ -154,20 +154,21 @@
 								<li><a >Brand </a>
 									<ul class="sub-menu">
 										<li><%= link_to "Razer",phanncc_razer_path%></li>
-                    <li><%= link_to "Logitech",phanncc_logitech_path%></li>
-                    <li><%= link_to "Corsair",phanncc_corsair_path%></li>
+										<li><%= link_to "Logitech",phanncc_logitech_path%></li>
+										<li><%= link_to "Corsair",phanncc_corsair_path%></li>
 									</ul>
 								</li>
-                <li class="li_login_disable"><%= link_to "Login",login_path%></li>
-                <li class="carts"><a >Your Cart </a>
+								<li class="li_login_disable"><%= link_to "Login",login_path%></li>
+								<li class="carts"><a >Your Cart </a>
 									<ul class="sub-menu">
-										<li>
-                      <div id="cart">
-                        <% if @cart %>
-                          <%= render @cart%>
-                            <% end%>
-                      </div>
-
+								<li>
+                    <div id="cart">
+												<% if @cart %>
+								
+													<%= render @cart %>
+												
+												<% end %>	
+											</div>
                     </li>
                
                     
@@ -189,13 +190,24 @@
               </style>
               <!--end-->
               <ul >
-              <li><%= link_to "User",users_path%></li>
-              <li><%= link_to "Order",orders_path%></li>
-              <li><%= link_to "Gear",gears_path%></li>
-              <li><%= link_to "Brand",brands_path%></li>
-              <li><%= link_to "Type",types_path%></li>
-              <li> <%= button_to "Logout",logout_path,method: :delete,:type=>"li" %></li>
+			  <li><a >Admin Permission </a>
+									<ul class="sub-menu">
+										<li><%= link_to "User",users_path%></li>
+										<li><%= link_to "Order",orders_path%></li>
+										<li><%= link_to "Gear",gears_path%></li>
+										<li><%= link_to "Brand",brands_path%></li>
+										<li><%= link_to "Type",types_path%></li>
+										<li> <%= button_to "Logout",logout_path,method: :delete,:class=>"hihi" %></li>
+									</ul>
+								</li>
               </ul>
+			  <!--css for logout-->
+			  <style>
+			  input.hihi {
+					margin-left: 80%;
+				}
+			  </style>
+			  <!--end-->
              
               
               <!--End-->

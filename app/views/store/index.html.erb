@@ -11,9 +11,12 @@
 								<a href="#">
 									<%= image_tag gear.image.url(:medium),:size=>"300x200"%>
 								</a>
-								<a class="modal-view" href="#" data-toggle="modal" data-target="#productModal">Details</a>
+			
+								<%= link_to 'Details', gear,:class=>"modal-view"%>
+                                
 								<div class="action-buttons">
-                                     <span><%= button_to 'Add to Cart', line_items_path(gear_id: gear),remote: true %></span>	
+									 <span><%= button_to 'Add to Cart', line_items_path(gear_id: gear),
+									 remote: true %></span>	
 								</div>
 							</div>
 							<div class="product-content">
