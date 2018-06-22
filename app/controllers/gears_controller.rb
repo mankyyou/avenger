@@ -1,13 +1,14 @@
 class GearsController < ApplicationController
+  before_action :authenticate_chipu!
   before_action :set_gear, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:show]
+
   # GET /gears
   # GET /gears.json
   def index
     if params[:query].present?
-      @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 5)
+      @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 2)
     else
-      @gears = Gear.all.paginate(page: params[:page], per_page: 5)
+      @gears = Gear.all.paginate(page: params[:page], per_page: 2)
     end
   end
 
@@ -51,9 +52,6 @@ class GearsController < ApplicationController
       if @gear.update(gear_params)
         format.html { redirect_to @gear, notice: "Gear was successfully updated." }
         format.json { render :show, status: :ok, location: @gear }
-        @gears = Gear.all
-        ActionCable.server.broadcast "gears",
-                                     html: render_to_string("store/index", layout: false)
       else
         format.html { render :edit }
         format.json { render json: @gear.errors, status: :unprocessable_entity }

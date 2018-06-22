@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag @gear.image.url(:medium)%>
 <p>
   <strong>Name:</strong>
   <%= @gear.name %>
@@ -12,7 +12,8 @@
 
 <p>
   <strong>Image url:</strong>
-  <%= image_tag @gear.image.url(:medium),:size=>"80x50"%>
+ 
+
 </p>
 
 <p>
@@ -32,8 +33,6 @@
       <strong>Brand:</strong>
       <%= @gear.brand.brandname %>
     </p>
-    <%= button_to 'Add to Cart', line_items_path(gear_id: @gear),remote: true %>
-<% if session[:user_id] %>
+
 <%= link_to 'Edit', edit_gear_path(@gear) %> |
 <%= link_to 'Back', gears_path %>
-<%end%>

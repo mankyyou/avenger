@@ -1,15 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Gears</h1>
-<%# <input type="text" name="query" id="query" placeholder="Nhập tên" >
-<input type="submit" name="commit" value="Search"> %>
 
-  <%= form_tag gears_path, method: :get do %>
-  <%= text_field_tag "query", params[:query], placeholder: "Name" %>
-  <%= submit_tag "Search!" %>
-  <% end %>
-
-<table class="w3-table-all w3-hoverable">
+<table>
   <thead>
     <tr>
       <th>Name</th>
@@ -17,10 +10,7 @@
       <th>Image url</th>
       <th>Price</th>
       <th>Inventory</th>
-      <th>Brand</th>
-      <th>Type</th>
       <th colspan="3"></th>
-
     </tr>
   </thead>
 
@@ -29,20 +19,17 @@
       <tr>
         <td><%= gear.name %></td>
         <td><%= gear.description %></td>
-        <td><%= image_tag gear.image.url(:medium),:size=>"80x50"%></td>
+        <td><%= gear.image_url %></td>
         <td><%= gear.price %></td>
         <td><%= gear.inventory %></td>
-        <td><%= gear.brand.brandname %></td>
-        <td><%= gear.type.typename %></td>
         <td><%= link_to 'Show', gear %></td>
         <td><%= link_to 'Edit', edit_gear_path(gear) %></td>
         <td><%= link_to 'Destroy', gear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-  
 </table>
-<%= will_paginate @gears%>
+
 <br>
 
 <%= link_to 'New Gear', new_gear_path %>

@@ -372,7 +372,7 @@ left: 0;
 padding: 5px 0;
 position: absolute;
 top: 150%;
-width: 350px;opacity:0;z-index:-99;transition: all 0.3s ease 0s;}
+width: 305px;opacity:0;z-index:-99;transition: all 0.3s ease 0s;}
 .mainmenu ul li:hover ul.sub-menu{top:100%;z-index:99;opacity:1}
 .mainmenu ul li:hover ul.sub-menu li a:hover{color: #83cbdc!important;padding-left:30px}
 .mainmenu ul li ul.sub-menu li{display: block;
@@ -1265,7 +1265,7 @@ margin-left: 55px;
 .home-3 .header-search {background: transparent none repeat scroll 0 0;
 height: 32px;
 margin: 0;
-width: 34%;
+width: 54%;
 border: 1px solid #464646;}
 .home-3 .header-top-menu {
   margin-top: 10px;position:relative
@@ -1280,7 +1280,7 @@ border: 1px solid #464646;}
   width: 1px;
 }
 .home-3 .top-category ul li.search-top {
-  width: 82%;
+  width: 88%;
 }
 .home-3 .top-category ul li input {
 background: transparent none repeat scroll 0 0;
@@ -1686,7 +1686,7 @@ vertical-align: top; margin-left: 2px;}
   background: #fff;
   border: 2px solid #ccc;color: #444;
 }
-.home-4 .action-buttons a.add-to-cart,.home-5 .action-buttons a.add-to-cart{width: 100%;}
+.home-4 .action-buttons a.add-to-cart,.home-5 .action-buttons a.add-to-cart{width: 50%;}
 .home-4 .action-buttons a span, .home-5 .action-buttons a span {
   color: inherit;
 }

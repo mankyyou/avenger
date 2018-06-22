@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  skip_before_action :authorize, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
@@ -17,6 +16,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    @total = LineItem.total
     @order = Order.new
   end
 
@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
         }
       else
         format.html { render :new }
+        @total = LineItem.total
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -77,7 +78,8 @@ class OrdersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
-    params.require(:order).permit(:name, :address, :phone, :email, :pay_type)
+    # @total = LineItem.total
+    params.require(:order).permit(:name, :address, :phone, :email, :pay_type, :total)
   end
 
   def ensure_cart_isnt_empty

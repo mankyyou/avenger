@@ -4,8 +4,8 @@
     <h2 style="color:#ffffff;">Your Cart</h2>
     
         <table class="w3-table-all w3-hoverable">
-        <thead>
-            <tr class="w3-light-grey">
+        <thead class="thead-dark">
+            <tr>
                 <th>Quanlity</th>
                 <th>Name</th>
                 <th>Price</th>
@@ -20,13 +20,14 @@
                     <td colspan="2">Total</td>
                     <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
             </tr>
+                
             
-           
             
-            
+            <% end %>
 </table> 
-    
-            <%= button_to "Checkout", new_order_path, method: :get %>
-           <%= button_to 'Empty cart', cart, method: :delete,
-data: { confirm: 'Are you sure?' } %>
-<% end%>
+<table class="with_2">
+<tr>
+<th><%= button_to "Checkout", new_order_path, method: :get %></th>
+            <th><%= button_to 'Empty cart', cart, method: :delete,data: { confirm: 'Are you sure?' } %></th>
+</tr>
+</table>

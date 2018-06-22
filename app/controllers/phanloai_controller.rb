@@ -1,6 +1,4 @@
 class PhanloaiController < ApplicationController
-  skip_before_action :authorize
-
   def mouse
     if params[:query].present?
       @loai = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 4)
