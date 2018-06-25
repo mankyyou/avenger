@@ -3,6 +3,8 @@ class StoreController < ApplicationController
   before_action :set_cart
 
   def index
+    @brands = Brand.all
+    @types = Type.all
     if params[:query].present?
       @gears = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 7)
     else

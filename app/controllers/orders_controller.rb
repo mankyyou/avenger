@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @total = LineItem.total
+    @total = Cart.total
     @order = Order.new
   end
 

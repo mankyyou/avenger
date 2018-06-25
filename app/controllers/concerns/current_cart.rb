@@ -3,6 +3,8 @@ module CurrentCart
 
   def set_cart
     @cart = Cart.find(session[:cart_id])
+    @brands = Brand.all
+    @types = Type.all
   rescue ActiveRecord::RecordNotFound
     @cart = Cart.create
     session[:cart_id] = @cart.id

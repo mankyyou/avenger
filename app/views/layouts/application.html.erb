@@ -1,337 +1,477 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
 	<title>Avenger-Gear</title>
-    <!--Source for grid item-->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!---->
+	<!--Source for grid item-->
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!---->
 	<!--CSS for scroll-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--end-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
-        <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<!-- Basic page needs
-		============================================ -->	
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home page 3</title>
-        <meta name="description" content="">
-		
-		<!-- Mobile specific metas
-		============================================ -->		
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+			<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+				<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+					<!-- Basic page needs
+		============================================ -->
+					<meta charset="utf-8">
+					<meta http-equiv="x-ua-compatible" content="ie=edge">
+					<title>Home page 3</title>
+					<meta name="description" content="">
 
-		<!-- Font
+					<!-- Mobile specific metas
 		============================================ -->
-		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>		
-		
-		<!-- Favicon
-		============================================ -->
-		<link rel="shortcut icon" type="image/x-icon" href="/assets/icon.ico">
+					<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- CSS  -->
-		
-		<!-- Bootstrap CSS
+					<!-- Font
 		============================================ -->
-        <link rel="stylesheet" href="/assets/bootstrap.min.css">
-		
-		<!-- owl.carousel CSS
-		============================================ -->
-        <link rel="stylesheet" href="/assets/owl.carousel.css">	
-		
-		<!-- owl.theme CSS
-		============================================ -->
-        <link rel="stylesheet" href="/assets/owl.theme.css">
+					<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-		<!-- owl.transitions CSS
+					<!-- Favicon
 		============================================ -->
-        <link rel="stylesheet" href="/assets/owl.transitions.css">
-		
-		<!-- font-awesome CSS
+					<link rel="shortcut icon" type="image/x-icon" href="/assets/icon.ico">
+
+					<!-- CSS  -->
+
+					<!-- Bootstrap CSS
 		============================================ -->
-        <link rel="stylesheet" href="/assets/font-awesome.min.css">
-		
-		<!-- animate CSS
+					<link rel="stylesheet" href="/assets/bootstrap.min.css">
+
+					<!-- owl.carousel CSS
 		============================================ -->
-        <link rel="stylesheet" href="/assets/animate.css">
-		
-		<!-- slicknav CSS
-		============================================ -->		
-        <link rel="stylesheet" href="/assets/slicknav.css">
-		
-		<!-- rs-plugin CSS
-		============================================ -->			
-		<link href="/assets/settings.css" rel="stylesheet" />			
-		
-		<!-- normalize CSS
-		============================================ -->		
-        <link rel="stylesheet" href="/assets/normalize.css">
-		
-		<!-- main CSS
-		============================================ -->		
-        <link rel="stylesheet" href="/assets/main.css">
-		
-		<!-- home-3-color CSS
-		============================================ -->		
-        <link rel="stylesheet" href="/assets/home-3-color.css">
-		
-		<!-- style CSS
-		============================================ -->			
-        <link rel="stylesheet" href="/assets/style.css">
-		
-		<!-- responsive CSS
-		============================================ -->			
-        <link rel="stylesheet" href="/assets/responsive.css">
-		
-		<!-- modernizr js
-		============================================ -->		
-        <script src="/assets/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body class="home-3">
-        <!--[if lt IE 8]>
+					<link rel="stylesheet" href="/assets/owl.carousel.css">
+
+					<!-- owl.theme CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/owl.theme.css">
+
+					<!-- owl.transitions CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/owl.transitions.css">
+
+					<!-- font-awesome CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/font-awesome.min.css">
+
+					<!-- animate CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/animate.css">
+
+					<!-- slicknav CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/slicknav.css">
+
+					<!-- rs-plugin CSS
+		============================================ -->
+					<link href="/assets/settings.css" rel="stylesheet" />
+
+					<!-- normalize CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/normalize.css">
+
+					<!-- main CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/main.css">
+
+					<!-- home-3-color CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/home-3-color.css">
+
+					<!-- style CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/style.css">
+
+					<!-- responsive CSS
+		============================================ -->
+					<link rel="stylesheet" href="/assets/responsive.css">
+
+					<!-- modernizr js
+		============================================ -->
+					<script src="/assets/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body class="home-3">
+	<!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-   
-   <!-- header start -->    
+	<!-- Add your site or application content here -->
+
+	<!-- header start -->
 
 
 	<header>
-	<!-- header-top-area start -->
-	<div class="header-top-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					
+		<!-- header-top-area start -->
+		<div class="header-top-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+
 						<span>justice@test.com</span>
-					
-								
-				</div>	
-				<!-- cat-search start -->
 
 
-							
-						<!-- header-search start -->
-						<div class="header-search">						
-							<div class="top-category">
-								<ul>
-									
-									<li class="search-top">
-										<%= form_tag store_index_path, method: :get ,:class => 'search-top' do  %>
-                    <%= text_field_tag "query", params[:query], placeholder: "Name" %>
-                   
-
-									</li>
-                  
-								</ul>
-                 <%= submit_tag "Search",:class=>"btn btn-danger" %>
-                  <% end %>
-							</div>
-						</div>
-						<!-- header-search end -->
 					</div>
-				</div>
-				<!-- cat-search end -->
-			</div>
-		</div>
-	</div>	
-	<!-- header-top-area end -->
-	<!-- mainmenu-area start -->
-	<div class="mainmenu-area">
-		<div class="container">
-			<div class="row">
-				<!-- logo start -->
-				<div class="col-lg-4 col-md-4 col-sm-12">
-				
-				</div>
-				<!-- logo end -->
-				<div class="col-lg-8 col-md-8 col-sm-12">
-					<div class="mainmenu">
-						<nav>
+					<!-- cat-search start -->
 
+
+
+					<!-- header-search start -->
+					<div class="header-search">
+						<div class="top-category">
 							<ul>
-								<li><img src="/assets/icon.ico" width="30%" height="40%"></li>
-								<li><%= link_to "Home",store_index_path%></li>
-								<li class="li_login_disable"> <% if current_chipu %>
-									<%= link_to "Logout",destroy_chipu_session_path,method: :delete%>
-									<% else %>
-									<%= link_to "Login",new_chipu_session_path%>
-									<% end%></li>
-               
-								<li><a href="index.html">Types</a>
-									<ul class="sub-menu">
-                    <li><%= link_to "Mouse",phanloai_mouse_path%></li>
-										<li><%= link_to "Keyboard",phanloai_keyboard_path%></li>
-									</ul>
-								</li>
-								<li><a >Brand </a>
-									<ul class="sub-menu">
-										<li><%= link_to "Razer",phannsx_razer_path%></li>
-                    <li><%= link_to "Logitech",phannsx_logitech_path%></li>
-                    <li><%= link_to "Corsair",phannsx_corsair_path%></li>
-									</ul>
-								</li>
-								<li class="carts"><a >Your Cart </a>
-									<ul class="sub-menu">
-										<li>
-                      <div id="cart">
-                        <% if @cart %>
-                          <%= render @cart%>
-                            <% end%>
-                      </div>
 
-                    </li>
-               
-                    
-										
-									</ul>
+								<li class="search-top">
+									<%= form_tag store_index_path, method: :get ,:class => 'search-top' do  %>
+										<%= text_field_tag "query", params[:query], placeholder: "Name" %>
+
+
 								</li>
-							
+
 							</ul>
-                <!--Show ul_admin-->
-             
-              
-              <!--End-->
-						</nav>
+							<%= submit_tag "Search",:class=>"btn btn-danger" %>
+								<% end %>
+						</div>
 					</div>
+					<!-- header-search end -->
 				</div>
 			</div>
-      
-			<!-- mobile menu start -->
-			<div class="row">
-				<div class="col-md-12">
-					<div class="mobile-menu">
-						<nav>
-							<ul id="mobile-menu">
-								<li><a href="index.html">Home</a>
-									<ul>
-										<li><a href="index-2.html">Home Shop 2</a></li>
-										<li><a href="index-3.html">Home Shop 3</a></li>
-										<li><a href="index-4.html">Home Shop 4</a></li>
-										<li><a href="index-5.html">Home Shop 5</a></li>
-										<li><a href="index-6.html">Home Shop 6</a></li>
-									</ul>									
-								</li>
-								<li><a href="shop.html">Shop</a>
-									<ul>
-										<li><a href="#">Shop Layouts</a>
-											<ul>
-												<li><a href="#">Full Width</a></li>
-												<li><a href="#">Sidebar Left</a></li>
-												<li><a href="#">Sidebar Right</a></li>
-												<li><a href="#">Sidebar Right</a></li>
-												<li><a href="shop-list.html">List View</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Shop Pages</a>
-											<ul>
-												<li><a href="#">Category </a></li>
-												<li><a href="#">My Account </a></li>
-												<li><a href="#">Wishlist</a></li>
-												<li><a href="cart.html">Shopping Cart</a></li>
-												<li><a href="checkout.html">Checkout</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Product Types</a>
-											<ul>
-												<li><a href="product.html">Simple Product</a></li>
-												<li><a href="product-variable.html">Variable Product</a></li>
-												<li><a href="#">Grouped Product</a></li>
-												<li><a href="#">Downloadable</a></li>
-												<li><a href="#">External Product</a></li>
-												<li><a href="#">Virtual Product</a></li>
-											</ul>
-										</li>
-									</ul>								
-								</li>
-								<li><a href="blog-nosidebar.html">Blog</a>
-									<ul>
-									<li><a href="#">Blog Layouts</a>
-										<ul>
-											<li><a href="blog-nosidebar.html">None Sidebar</a></li>
-											<li><a href="blog-fullwidth.html">Full Width</a></li>
-											<li><a href="blog-left-sidebar.html">Sidebar Left</a></li>
-											<li><a href="blog-right-sidebar.html">Sidebar Right</a></li>
-										</ul>									
-									</li>
-									<li><a href="#">Blog Pages</a>
-										<ul>
-											<li><a href="blog-author.html">Author</a></li>
-											<li><a href="blog-archive.html">Archive</a>	</li>
-											<li><a href="blog-category.html">Category </a></li>
-											<li><a href="blog-tag.html">Blog Tag</a></li>
-										</ul>									
-									</li>
-									<li><a href="#">Post Formats</a>
-										<ul>
-											<li><a href="blog-post-image.html">Image Format</a></li>
-											<li><a href="blog-post-gallery.html">Gallery Format </a></li>
-											<li><a href="blog-post-audio.html">Audio Format </a></li>
-											<li><a href="blog-post-video.html">Video Format</a></li>
-										</ul>									
-									</li>
-									</ul>
-								</li>
-								<li><a href="#">Pages</a>
-									<ul>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="cart.html">Shopping Cart</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="product.html">Simple Product</a></li>
-										<li><a href="product-variable.html">Variable Product</a></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="shop-list.html">shop-list</a></li>
-										<li><a href="404.html">Error 404</a></li>
-									</ul>									
-								</li>
-								<li><a href="#">Buy Now</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-			<!-- mobile menu end -->			
+			<!-- cat-search end -->
 		</div>
-	</div>
-	<!-- mainmenu-area end -->
+		</div>
+		</div>
+		<!-- header-top-area end -->
+		<!-- mainmenu-area start -->
+		<div class="mainmenu-area">
+			<div class="container">
+				<div class="row">
+					<!-- logo start -->
+					<div class="col-lg-4 col-md-4 col-sm-12">
+
+					</div>
+					<!-- logo end -->
+					<div class="col-lg-8 col-md-8 col-sm-12">
+						<div class="mainmenu">
+							<nav>
+
+								<ul>
+									<li>
+										<img src="/assets/icon.ico" width="30%" height="40%">
+									</li>
+									<li>
+										<%= link_to "Home",store_index_path%>
+									</li>
+									<li class="li_login_disable">
+										<% if current_chipu %>
+											<%= link_to "Logout",destroy_chipu_session_path,method: :delete%>
+												<% else %>
+													<%= link_to "Login",new_chipu_session_path%>
+														<% end%>
+									</li>
+
+									<li>
+										<a href="index.html">Types</a>
+										<ul class="sub-menu">
+											<li>
+												<%= link_to "Mouse",phanloai_mouse_path%>
+											</li>
+											<li>
+												<%= link_to "Keyboard",phanloai_keyboard_path%>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a>Brand </a>
+										<ul class="sub-menu">
+											<li>
+												<%= link_to "Razer",phannsx_razer_path%>
+											</li>
+											<li>
+												<%= link_to "Logitech",phannsx_logitech_path%>
+											</li>
+											<li>
+												<%= link_to "Corsair",phannsx_corsair_path%>
+											</li>
+										</ul>
+									</li>
+									<li class="carts">
+										<a>Your Cart </a>
+										<ul class="sub-menu">
+											<li>
+												<div id="cart">
+													<% if @cart %>
+														<%= render @cart%>
+															<% end%>
+												</div>
+
+											</li>
+
+
+
+										</ul>
+									</li>
+									<%if @cart%>
+									<li>
+										<a>Brand </a>
+										<ul class="sub-menu">
+											<%@brands.each do |brand|%>
+												<li>
+													<%=link_to brand.brandname, productbrand_path(brand.brandname)%>
+												</li>
+												<%end%>
+										</ul>
+									</li>
+									<%end%>
+									<%if @cart%>
+									<li>
+										<a>Type </a>
+										<ul class="sub-menu">
+											<%@types.each do |type|%>
+												<li>
+													<%=link_to type.typename, producttype_path(type.typename)%>
+												</li>
+												<%end%>
+										</ul>
+									</li>
+									<%end%>
+								</ul>
+								<!--Show ul_admin-->
+
+
+								<!--End-->
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<!-- mobile menu start -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mobile-menu">
+							<nav>
+								<ul id="mobile-menu">
+									<li>
+										<a href="index.html">Home</a>
+										<ul>
+											<li>
+												<a href="index-2.html">Home Shop 2</a>
+											</li>
+											<li>
+												<a href="index-3.html">Home Shop 3</a>
+											</li>
+											<li>
+												<a href="index-4.html">Home Shop 4</a>
+											</li>
+											<li>
+												<a href="index-5.html">Home Shop 5</a>
+											</li>
+											<li>
+												<a href="index-6.html">Home Shop 6</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="shop.html">Shop</a>
+										<ul>
+											<li>
+												<a href="#">Shop Layouts</a>
+												<ul>
+													<li>
+														<a href="#">Full Width</a>
+													</li>
+													<li>
+														<a href="#">Sidebar Left</a>
+													</li>
+													<li>
+														<a href="#">Sidebar Right</a>
+													</li>
+													<li>
+														<a href="#">Sidebar Right</a>
+													</li>
+													<li>
+														<a href="shop-list.html">List View</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#">Shop Pages</a>
+												<ul>
+													<li>
+														<a href="#">Category </a>
+													</li>
+													<li>
+														<a href="#">My Account </a>
+													</li>
+													<li>
+														<a href="#">Wishlist</a>
+													</li>
+													<li>
+														<a href="cart.html">Shopping Cart</a>
+													</li>
+													<li>
+														<a href="checkout.html">Checkout</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#">Product Types</a>
+												<ul>
+													<li>
+														<a href="product.html">Simple Product</a>
+													</li>
+													<li>
+														<a href="product-variable.html">Variable Product</a>
+													</li>
+													<li>
+														<a href="#">Grouped Product</a>
+													</li>
+													<li>
+														<a href="#">Downloadable</a>
+													</li>
+													<li>
+														<a href="#">External Product</a>
+													</li>
+													<li>
+														<a href="#">Virtual Product</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="blog-nosidebar.html">Blog</a>
+										<ul>
+											<li>
+												<a href="#">Blog Layouts</a>
+												<ul>
+													<li>
+														<a href="blog-nosidebar.html">None Sidebar</a>
+													</li>
+													<li>
+														<a href="blog-fullwidth.html">Full Width</a>
+													</li>
+													<li>
+														<a href="blog-left-sidebar.html">Sidebar Left</a>
+													</li>
+													<li>
+														<a href="blog-right-sidebar.html">Sidebar Right</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#">Blog Pages</a>
+												<ul>
+													<li>
+														<a href="blog-author.html">Author</a>
+													</li>
+													<li>
+														<a href="blog-archive.html">Archive</a>
+													</li>
+													<li>
+														<a href="blog-category.html">Category </a>
+													</li>
+													<li>
+														<a href="blog-tag.html">Blog Tag</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#">Post Formats</a>
+												<ul>
+													<li>
+														<a href="blog-post-image.html">Image Format</a>
+													</li>
+													<li>
+														<a href="blog-post-gallery.html">Gallery Format </a>
+													</li>
+													<li>
+														<a href="blog-post-audio.html">Audio Format </a>
+													</li>
+													<li>
+														<a href="blog-post-video.html">Video Format</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Pages</a>
+										<ul>
+											<li>
+												<a href="contact.html">Contact</a>
+											</li>
+											<li>
+												<a href="about-us.html">About Us</a>
+											</li>
+											<li>
+												<a href="cart.html">Shopping Cart</a>
+											</li>
+											<li>
+												<a href="checkout.html">Checkout</a>
+											</li>
+											<li>
+												<a href="product.html">Simple Product</a>
+											</li>
+											<li>
+												<a href="product-variable.html">Variable Product</a>
+											</li>
+											<li>
+												<a href="shop.html">Shop</a>
+											</li>
+											<li>
+												<a href="shop-list.html">shop-list</a>
+											</li>
+											<li>
+												<a href="404.html">Error 404</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Buy Now</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- mobile menu end -->
+			</div>
+		</div>
+		<!-- mainmenu-area end -->
 	</header>
-	<!-- header end --> 
+	<!-- header end -->
 
-	
-<div class="w3-content w3-section" style="max-width:1000px">
-  <img class="mySlides" src="/assets/cover/1.jpg" style="width:100%">
-  <img class="mySlides" src="/assets/cover/2.jpg" style="width:100%">
-  <img class="mySlides" src="/assets/cover/3.jpg" style="width:100%">
-</div>
 
-<script>
-var myIndex = 0;
-carousel();
+	<div class="w3-content w3-section" style="max-width:1000px">
+		<img class="mySlides" src="/assets/cover/1.jpg" style="width:100%">
+		<img class="mySlides" src="/assets/cover/2.jpg" style="width:100%">
+		<img class="mySlides" src="/assets/cover/3.jpg" style="width:100%">
+	</div>
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>
+	<script>
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			myIndex++;
+			if (myIndex > x.length) { myIndex = 1 }
+			x[myIndex - 1].style.display = "block";
+			setTimeout(carousel, 2000); // Change image every 2 seconds
+		}
+	</script>
 
 	<!-- HOME SLIDER END -->
 	<!-- promotion-area start -->
-	
+
 	<!-- promotion-area end -->
 	<!-- features-area start -->
 	<div class="features-area">
@@ -342,24 +482,24 @@ function carousel() {
 						<h3>Featured products</h3>
 					</div>
 				</div>
-			</div>	
-      	<!--Begin products yield-->	
-        <%=yield%>	
-      	<!--End-->
+			</div>
+			<!--Begin products yield-->
+			<%=yield%>
+				<!--End-->
 		</div>
 	</div>
 	<!-- features-area end -->
 	<!-- sale-product-area start -->
-	
+
 	<!-- sale-product-area end -->
 	<!-- category-area start -->
-	
+
 	<!-- category-area end -->
 	<!-- banner-area start -->
-	
-	<!-- banner-area end -->	
+
+	<!-- banner-area end -->
 	<!-- recent-post-area start -->
-	
+
 
 	<!-- QUICKVIEW PRODUCT -->
 	<div id="quickview-wrapper">
@@ -368,7 +508,9 @@ function carousel() {
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 					</div>
 					<div class="modal-body">
 						<div class="modal-product">
@@ -376,12 +518,17 @@ function carousel() {
 								<div class="main-image images">
 									<img alt="" src="img/product/13.jpg">
 								</div>
-							</div><!-- .product-images -->
-							
+							</div>
+							<!-- .product-images -->
+
 							<div class="product-info">
 								<h1>Diam quis cursus</h1>
 								<div class="price-box">
-									<p class="price"><span class="special-price"><span class="amount">$132.00</span></span></p>
+									<p class="price">
+										<span class="special-price">
+											<span class="amount">$132.00</span>
+										</span>
+									</p>
 								</div>
 								<a href="shop.html" class="see-all">See all features</a>
 								<div class="quick-add-to-cart">
@@ -393,95 +540,129 @@ function carousel() {
 									</form>
 								</div>
 								<div class="quick-desc">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero
+									vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu,
+									suscipit id nulla.
 								</div>
 								<div class="social-sharing">
 									<div class="widget widget_socialsharing_widget">
 										<h3 class="widget-title-modal">Share this product</h3>
 										<ul class="social-icons">
-											<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
-											<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
-											<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
-											<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
-											<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
+											<li>
+												<a target="_blank" title="Facebook" href="#" class="facebook social-icon">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a target="_blank" title="Twitter" href="#" class="twitter social-icon">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a target="_blank" title="Pinterest" href="#" class="pinterest social-icon">
+													<i class="fa fa-pinterest"></i>
+												</a>
+											</li>
+											<li>
+												<a target="_blank" title="Google +" href="#" class="gplus social-icon">
+													<i class="fa fa-google-plus"></i>
+												</a>
+											</li>
+											<li>
+												<a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
 										</ul>
 									</div>
 								</div>
-							</div><!-- .product-info -->
-						</div><!-- .modal-product -->
-					</div><!-- .modal-body -->
-				</div><!-- .modal-content -->
-			</div><!-- .modal-dialog -->
+							</div>
+							<!-- .product-info -->
+						</div>
+						<!-- .modal-product -->
+					</div>
+					<!-- .modal-body -->
+				</div>
+				<!-- .modal-content -->
+			</div>
+			<!-- .modal-dialog -->
 		</div>
 		<!-- END Modal -->
-    <div class="promotion-area">
-		<div class="container">
-			<div class="row">
-				<!-- single-promo start -->
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<div class="single-promo">
-						<a href="#"><img src="/assets/cover/4.jpg" alt="" /></a>
+		<div class="promotion-area">
+			<div class="container">
+				<div class="row">
+					<!-- single-promo start -->
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="single-promo">
+							<a href="#">
+								<img src="/assets/cover/4.jpg" alt="" />
+							</a>
+						</div>
 					</div>
-				</div>
-				<!-- single-promo end -->
-				<!-- single-promo start -->
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<div class="single-promo">
-						<a href="#"><img src="/assets/cover/5.jpg" alt="" /></a>
+					<!-- single-promo end -->
+					<!-- single-promo start -->
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="single-promo">
+							<a href="#">
+								<img src="/assets/cover/5.jpg" alt="" />
+							</a>
+						</div>
 					</div>
-				</div>
-				<!-- single-promo end -->
-				<!-- single-promo start -->
-				<!-- single-promo start -->
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<div class="single-promo">
-						<a href="#"><img src="/assets/cover/6.jpg" alt="" /></a>
+					<!-- single-promo end -->
+					<!-- single-promo start -->
+					<!-- single-promo start -->
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="single-promo">
+							<a href="#">
+								<img src="/assets/cover/6.jpg" alt="" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	<!-- END QUICKVIEW PRODUCT -->		
-	
-		<!-- JS -->
-		
-		<!-- jquery js -->
-		<script src="/assets/jquery-1.11.2.min.js"></script>
-		
-		<!-- bootstrap js -->
-		<script src="/assets/bootstrap.min.js"></script>
-		
-		<!-- owl.carousel.min js -->
-		<script src="/assets/owl.carousel.min.js"></script>
-		
-		<!-- slicknav js -->
-		<script src="/assets/jquery.slicknav.js"></script>
-		
-		<!-- countdown js -->
-		<script src="/assets/jquery.countdown.min.js"></script>
-		
-		<!-- price-slider js -->
-		<script src="/assets/price-slider.js"></script>
+	<!-- END QUICKVIEW PRODUCT -->
 
-		<!-- jquery.scrollUp js -->
-		<script src="/assets/jquery.scrollUp.min.js"></script>			
-		
-		<!-- Lib js -->		
-		<script src="/assets/jquery.themepunch.plugins.min.js"></script>
-		<script src="/assets/jquery.themepunch.revolution.min.js"></script>
-		<script src="/assets/rs.home.js"></script>		
-		
-		<!-- plugins js -->
-		<script src="/assets/plugins.js"></script>
-		
-		<!-- main js -->
-		<script src="/assets/main.js"></script>
+	<!-- JS -->
+
+	<!-- jquery js -->
+	<script src="/assets/jquery-1.11.2.min.js"></script>
+
+	<!-- bootstrap js -->
+	<script src="/assets/bootstrap.min.js"></script>
+
+	<!-- owl.carousel.min js -->
+	<script src="/assets/owl.carousel.min.js"></script>
+
+	<!-- slicknav js -->
+	<script src="/assets/jquery.slicknav.js"></script>
+
+	<!-- countdown js -->
+	<script src="/assets/jquery.countdown.min.js"></script>
+
+	<!-- price-slider js -->
+	<script src="/assets/price-slider.js"></script>
+
+	<!-- jquery.scrollUp js -->
+	<script src="/assets/jquery.scrollUp.min.js"></script>
+
+	<!-- Lib js -->
+	<script src="/assets/jquery.themepunch.plugins.min.js"></script>
+	<script src="/assets/jquery.themepunch.revolution.min.js"></script>
+	<script src="/assets/rs.home.js"></script>
+
+	<!-- plugins js -->
+	<script src="/assets/plugins.js"></script>
+
+	<!-- main js -->
+	<script src="/assets/main.js"></script>
 
 
- 
 
-    </body>
+
+</body>
 
 <!-- Tieu Long Lanh -->
+
 </html>
