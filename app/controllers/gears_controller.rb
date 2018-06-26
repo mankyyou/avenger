@@ -1,6 +1,8 @@
 class GearsController < ApplicationController
-  before_action :authenticate_chipu!
+  before_action :authenticate_chipu!, except: [:show]
   before_action :set_gear, only: [:show, :edit, :update, :destroy]
+  include CurrentCart
+  before_action :set_cart
 
   # GET /gears
   # GET /gears.json

@@ -351,7 +351,7 @@ text-transform: uppercase;}
 border-top: 1px solid #e5e5e5;}
 .mainmenu{}
 .mainmenu ul{}
-.mainmenu ul li{float: left;position:relative}
+.mainmenu ul li{float: left;position:relative;}
 .mainmenu ul li:before{background: #ddd none repeat scroll 0 0;
 content: "";
 height: 40px;
@@ -1571,7 +1571,7 @@ border: 0;
 .home-4 .mainmenu-area {
   border-bottom: medium none;
   border-top: medium none;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 .home-4 .top-category ul li.search-top {
   width: 60%;

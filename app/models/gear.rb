@@ -12,7 +12,11 @@ class Gear < ApplicationRecord
   validates :price, presence: true, numericality: {greater_than_or_equal_to: 1}
   validates :inventory, presence: true, numericality: {greater_than_or_equal_to: 1}
   include PgSearch
-  pg_search_scope :search_name, against: [:name]
+  pg_search_scope :search_name, against: [:name], using: {
+                                  tsearch: {
+                                    prefix: true,
+                                  },
+                                }
 
   private
 

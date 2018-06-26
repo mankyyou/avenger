@@ -41,4 +41,9 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  config.navigation_static_label = "Other"
+  config.navigation_static_links = {
+    "Chart " => "/charts/index",
+    "Home " => "/",
+  }
 end

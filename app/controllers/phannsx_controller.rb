@@ -1,4 +1,7 @@
 class PhannsxController < ApplicationController
+  include CurrentCart
+  before_action :set_cart
+
   def razer
     if params[:query].present?
       @loai = Gear.search_name(params[:query]).paginate(page: params[:page], per_page: 4)

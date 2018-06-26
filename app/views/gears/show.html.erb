@@ -1,38 +1,129 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @gear.image.url(:medium)%>
-<p>
-  <strong>Name:</strong>
-  <%= @gear.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @gear.description %>
-</p>
 
-<p>
-  <strong>Image url:</strong>
- 
-
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @gear.price %>
-</p>
-
-<p>
-  <strong>Inventory:</strong>
-  <%= @gear.inventory %>
-</p>
-<p>
-    <strong>Type:</strong>
-    <%= @gear.type.typename %>
-  </p>
-  <p>
-      <strong>Brand:</strong>
-      <%= @gear.brand.brandname %>
-    </p>
-
+<!--
 <%= link_to 'Edit', edit_gear_path(@gear) %> |
 <%= link_to 'Back', gears_path %>
+-->
+<!--new -->
+<div id="ctl00_divCenter" class="col-main col-lg-9 col-xl-9 partner-main">
+	
+					        
+					        
+    
+<div class="Module Module-127"><div class="ModuleContent">
+<div id="ctl00_mainContent_ctl00_ctl00_pnlInnerWrap">
+		
+    
+    <div itemscope="itemscope" itemtype="http://schema.org/Product">
+  <div itemtype="http://schema.org/Organization" itemprop="brand" itemscope="itemscope">
+    <meta itemprop="name" content="Vortex">
+  </div>
+  <div class="block-productsDetail">
+    <div class="row">
+      <div class="col-xs-12 col-md-7 col-lg-7">
+        <a class="MagicZoom" id="imgProduct" data-options="zoomMode: off; cssClass: white-bg; hint: always; transitionEffect: false; lazyZoom: true; textExpandHint: Click phóng to" >
+          <figure class="mz-figure white-bg mz-hover-zoom mz-no-zoom"><%= image_tag @gear.image.url(:medium),:class=>"hover-img"%><div class="mz-lens" style="top: 0px; transform: translate(-10000px, -10000px);"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" style="position: absolute; top: 0px; left: 0px; width: 599.984px; height: 599.984px;"></div><div class="mz-hint"></div></figure>
+        </a>
+ 
+      </div>
+      <div class="col-xs-12 col-md-5 col-lg-5">
+        <div class="prd-content">
+          <h1 itemprop="name">  <%= @gear.name.upcase %></h1>
+          <div class="briefContent"></div>
+          <div class="brands prd-opt">
+            <span class="title">Type:</span>
+            <a ><%= @gear.type.typename %></a>
+          </div> <div class="brands prd-opt">
+            <span class="title">Brand:</span>
+            <a > <%= @gear.brand.brandname %></a>
+          </div></div> <div class="brands prd-opt">
+            <span class="title">Inventory:</span>
+            <a > <%= @gear.inventory %></a>
+          </div>
+     
+
+         
+          <div class="prd-price prd-opt">
+            <div class="row">
+              <div class="col-xs-12" itemscope="itemscope" itemprop="offers" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="VND">
+                <div class="price-new">
+                  <span class="title">Prise:</span>
+                  <span class="new-price" itemprop="price"> <%= number_to_currency(@gear.price, precision: 0, unit: "$", separator: ",") %>				</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row order-support">
+            <div class="col-xs-6">
+              <div class="order-submit">
+                <a class="order-prd" onclick="AjaxCheckout.prepareorder(this);return false;" data-productid="2301">  <%= button_to 'Add to Cart', line_items_path(gear_id: @gear),remote: true,:class=>"btn btn-warning" %></a>
+              </div>
+            </div>
+           
+          </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="prd-desc">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="nav nav-tabs responsive" role="tablist">
+          <li class="nav-item">
+           <a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1" aria-controls="tab-1" aria-expanded="true">Digital information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" role="tab" data-toggle="tab" href="#tab-0" aria-controls="tab-0">Comment</a>
+          </li>
+        </ul>
+        <div class="tab-content responsive">
+          <div role="tabpanel" class="tab-pane fade in active" id="tab-1">
+            <div class="contentFull clearfix"><ul>
+<%= @gear.description %>
+</ul></div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="tab-0">
+            <div class="comment-wrap">
+            <div id="ctl00_mainContent_ctl00_ctl00_comment_pnlFeedback" data-type="0" class="commentpanel commentpanel0">
+    <div class="journalTools">
+        <div class="journalEditor">
+            <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://vuive.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="journalItems">
+        
+    </div>
+    
+</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!---->
