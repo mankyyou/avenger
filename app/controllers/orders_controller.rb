@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
         }
       else
         format.html { render :new }
-        @total = LineItem.total
+        @total = Cart.total
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
