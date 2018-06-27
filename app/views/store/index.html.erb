@@ -1,48 +1,48 @@
 <p id="notice">
-    <%= notice %>
+	<%= notice %>
 </p>
-
-     <div class="container">
+<div class="container">
 	<div class="row">
-<% @gears.each do |gear| %>
-<%= link_to gear do %>
-		<div class="col-sm-4 ">
-			<div class="offer offer-radius offer-primary">
-				<div class="shape">
-					<div class="shape-text">
-						 
-                         <%= number_to_currency(gear.price, precision: 0, unit: "$", separator: ",") %>					
+		<% @gears.each do |gear| %>
+			<%= link_to gear do %>
+				<div class="col-sm-4 ">
+					<div class="offer offer-radius offer-primary">
+							<%if @date1.strftime("%m").to_i === gear.created_at.strftime("%m").to_i%>
+							<img src="/assets/new.gif " width="25px " height="25px " style="margin-left:20px; ">
+						<%end%>
+								<div class="shape">
+									<div class="shape-text">
+
+										<%= number_to_currency(gear.price, precision: 0, unit: "$", separator: ",") %>
+									</div>
+								</div>
+								<div class="offer-content">
+									<h3 class="lead">
+										<%= gear.name.upcase  %>
+
+									</h3>
+									<p>Brandname:
+										<%= gear.brand.brandname%>
+
+									</p>
+									<p>Typename::
+										<%= gear.type.typename%>
+
+									</p>
+								</div>
+
+								<div>
+
+									<%= image_tag gear.image.url(:medium),:size=>"120x50"%>
+										<% end %>
+
+
+											<%= button_to 'Add to Cart', line_items_path(gear_id: gear),remote: true,:class=>"btn btn-info" %>
+
+								</div>
 					</div>
+
 				</div>
-				<div class="offer-content">
-					<h3 class="lead">
-						 <%= gear.name.upcase  %>
-						
-					</h3>						
-					<p>Brandname:
-						<%= gear.brand.brandname%>
-						
-					</p>
-					<p>Typename::
-						<%= gear.type.typename%>
-						
-					</p>
-				</div>
-				 
-                <div>
-				
-  						 <%= image_tag gear.image.url(:medium),:size=>"120x50"%>
 				<% end %>
-                
-					
-                   <%= button_to 'Add to Cart', line_items_path(gear_id: gear),remote: true,:class=>"btn btn-info" %>
-					
-                </div>
-			</div>
-
-		</div>
-                        <% end %>
-</div>
-  	<%= will_paginate @gears%>
-
- 
+	</div>
+	<%= will_paginate @gears%>

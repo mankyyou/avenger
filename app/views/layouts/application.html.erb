@@ -161,7 +161,7 @@
 										<li>
 									
 										<%= link_to "Admin ",rails_admin_path%>
-										<img src="/assets/new.gif" width="25px" height="25px" style="margin-left:20px;">
+										<img src="/assets/admin.png " width="25px " height="25px " style="margin-left:20px; ">
 										</li>
 										
 									<style>
@@ -173,7 +173,7 @@
 									<%if @cart%>
 									<li>
 										<a>Type </a>
-										<ul class="sub-menu">
+										<ul class="sub-menu ">
 											<%@types.each do |type|%>
 												<li>
 													<%=link_to type.typename, producttype_path(type.typename)%>
