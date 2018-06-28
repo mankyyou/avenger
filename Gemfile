@@ -70,3 +70,4 @@ gem "awesome_print", require:"ap"
 gem 'will_paginate','~> 3.1','>= 3.1.5'
 gem 'rails-simple-search'
 gem 'pg_search'
+gem 'ckeditor'

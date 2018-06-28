@@ -1,3 +1,4 @@
+
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   include CurrentCart
@@ -16,7 +17,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @total = LineItem.total
+    @total = Cart.total
     @order = Order.new
   end
 
@@ -39,7 +40,7 @@ class OrdersController < ApplicationController
         }
       else
         format.html { render :new }
-        @total = LineItem.total
+        @total = Cart.total
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end

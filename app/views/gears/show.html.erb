@@ -25,32 +25,32 @@
         <a class="MagicZoom" id="imgProduct" data-options="zoomMode: off; cssClass: white-bg; hint: always; transitionEffect: false; lazyZoom: true; textExpandHint: Click phóng to" >
           <figure class="mz-figure white-bg mz-hover-zoom mz-no-zoom"><%= image_tag @gear.image.url(:medium),:class=>"hover-img"%><div class="mz-lens" style="top: 0px; transform: translate(-10000px, -10000px);"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" style="position: absolute; top: 0px; left: 0px; width: 599.984px; height: 599.984px;"></div><div class="mz-hint"></div></figure>
         </a>
+         <a class="order-prd" onclick="AjaxCheckout.prepareorder(this);return false;" data-productid="2301">  <%= button_to 'Add to Cart', line_items_path(gear_id: @gear),remote: true,:class=>"btn btn-warning" %></a>
  
-      </div>
+      </div>   
+      <h2><%= @gear.name.upcase %></h2>
+      <br>
+      <br>
+
       <div class="col-xs-12 col-md-5 col-lg-5">
         <div class="prd-content">
-          <h1 itemprop="name">  <%= @gear.name.upcase %></h1>
+            <h5 class="title">-Type: <%=link_to  @gear.type.typename.upcase, producttype_path(@gear.type.typename)%>		</h5>
+          
           <div class="briefContent"></div>
           <div class="brands prd-opt">
-            <span class="title">Type:</span>
-            <a ><%= @gear.type.typename %></a>
           </div> <div class="brands prd-opt">
-            <span class="title">Brand:</span>
-            <a > <%= @gear.brand.brandname %></a>
+            <h5 class="title">-Brand: <%=link_to @gear.brand.brandname.upcase, productbrand_path(@gear.brand.brandname)%></h5>
+           
           </div></div> <div class="brands prd-opt">
-            <span class="title">Inventory:</span>
-            <a > <%= @gear.inventory %></a>
+            <h5 class="title">-Inventory: <%= @gear.inventory %></h5>
           </div>
-     
-
-         
           <div class="prd-price prd-opt">
             <div class="row">
               <div class="col-xs-12" itemscope="itemscope" itemprop="offers" itemtype="http://schema.org/Offer">
                 <meta itemprop="priceCurrency" content="VND">
                 <div class="price-new">
-                  <span class="title">Prise:</span>
-                  <span class="new-price" itemprop="price"> <%= number_to_currency(@gear.price, precision: 0, unit: "$", separator: ",") %>				</span>
+                  <h5 class="title">-Prise:  <span class="new-price" itemprop="price"> <%= number_to_currency(@gear.price, precision: 0, unit: "$", separator: ",") %>				</span></h5>
+                 
                 </div>
               </div>
             </div>
@@ -58,11 +58,32 @@
           <div class="row order-support">
             <div class="col-xs-6">
               <div class="order-submit">
-                <a class="order-prd" onclick="AjaxCheckout.prepareorder(this);return false;" data-productid="2301">  <%= button_to 'Add to Cart', line_items_path(gear_id: @gear),remote: true,:class=>"btn btn-warning" %></a>
+               
               </div>
+               
+            
             </div>
            
           </div>
+            <h5>Other type of gear same: </h5>
+             <%@types.each do |type|%>
+            <div class="button-square">
+               <div class="gradient"></div>
+            <%=link_to  type.typename.upcase, producttype_path(type.typename),:class=>"button-type"%>		     
+            </div>
+            <%end%>
+            <br>
+            <br>
+            <br>
+             <h5>Other brand of gear same: </h5>
+             <%@brands.each do |brand|%>
+            <div class="button-square">
+               <div class="gradient"></div>
+            <%=link_to brand.brandname.upcase, productbrand_path(brand.brandname),:class=>"button-type"%>	     
+            </div>
+            <%end%>
+            
+          
         
       </div>
     </div>
@@ -81,7 +102,7 @@
         <div class="tab-content responsive">
           <div role="tabpanel" class="tab-pane fade in active" id="tab-1">
             <div class="contentFull clearfix"><ul>
-<%= @gear.description %>
+      <%=raw @gear.description %>
 </ul></div>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="tab-0">

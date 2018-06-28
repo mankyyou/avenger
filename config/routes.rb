@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   get "productbrand/show/gear_brand_id=:id" => "productbrand#show", :as => :productbrand
   get "producttype/show/gear_type_id=:id" => "producttype#show", :as => :producttype

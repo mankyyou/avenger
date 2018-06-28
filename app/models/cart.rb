@@ -1,5 +1,7 @@
+
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
+  $total
 
   def add_gear(gear)
     current_item = line_items.find_by(gear_id: gear.id)
@@ -13,5 +15,10 @@ class Cart < ApplicationRecord
 
   def total_price
     line_items.to_a.sum { |item| item.total_price }
+    $total = line_items.to_a.sum { |item| item.total_price }
+  end
+
+  def self.total
+    return $total
   end
 end

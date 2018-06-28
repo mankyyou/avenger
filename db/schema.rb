@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_032256) do
     t.string "image_url"
     t.decimal "price"
     t.integer "inventory"
+    t.boolean "hot"
     t.bigint "brand_id"
     t.bigint "type_id"
     t.datetime "created_at", null: false

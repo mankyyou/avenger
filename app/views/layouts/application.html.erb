@@ -20,6 +20,7 @@
 	<!--end-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 	<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 			<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -100,21 +101,13 @@
 					<!-- modernizr js
 		============================================ -->
 					<script src="/assets/modernizr-2.8.3.min.js"></script>
+
+					<!-- slide show-->
+					<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body class="home-3">
 	<!-- Load Facebook SDK for JavaScript -->
-	<div id="fb-root"></div>
-	<script>(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-	<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
 	<!-- Add your site or application content here -->
 
@@ -142,11 +135,14 @@
 							<ul>
 							<li><img  src="/assets/icon.ico " width="30% " height="40% "></li>
 								<li>
-									<%= form_tag store_index_path, method: :get ,:class => 'search-top' do  %>
-                    					<%= text_field_tag "query ", params[:query], placeholder: "Name ",:class=>"form-control " %>
+									
+								
+									<%= form_tag store_index_path, method: :get do %>
+									<%= text_field_tag "query", params[:query], placeholder: "Just search everything u want",:class=>"form-control" %>
+									
 								</li>
-								<li><%= submit_tag "Search ",:class=>"btn btn-danger " %>
-									<% end %></li>
+								<li><%= submit_tag "Search",:class=>"btn btn-danger" %>
+									<% end %>	</li>
 								
 								<li><%= link_to "Home ",store_index_path%></li>
 								<li class="li_login_disable "> <% if current_chipu %>
@@ -159,9 +155,10 @@
 									<%if current_chipu%>
 										<% if current_chipu.admin == true%>
 										<li>
+										
+										<%= link_to "Admin ",rails_admin_path,:class=>"pulse-button"%>
 									
-										<%= link_to "Admin ",rails_admin_path%>
-										<img src="/assets/new.gif" width="25px" height="25px" style="margin-left:20px;">
+										<img src="/assets/admin.png" width="25px" height="25px" style="margin-left:20px;">
 										</li>
 										
 									<style>
@@ -221,33 +218,40 @@
 	<!-- mainmenu-area end -->
 	</header>
 	<!-- header end --> 
+<br>
+<br>
+<br>
+<br>
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="/assets/cover/1.jpg" style="width:100%">
+  <img class="mySlides" src="/assets/cover/2.jpg" style="width:100%">
+  <img class="mySlides" src="/assets/cover/3.jpg" style="width:100%">
+  
 
-	<br>
-	<br>
-	<br>
-	
-<div class="w3-content w3-section " style="max-width:1000px ">
-  <img class="mySlides " src="/assets/cover/1.jpg " style="width:100% ">
-  <img class="mySlides " src="/assets/cover/2.jpg " style="width:100% ">
-  <img class="mySlides " src="/assets/cover/3.jpg " style="width:100% ">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
 
 <script>
-	var myIndex = 0;
-	carousel();
+var slideIndex = 1;
+showDivs(slideIndex);
 
-	function carousel() {
-		var i;
-		var x = document.getElementsByClassName("mySlides ");
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none ";
-		}
-		myIndex++;
-		if (myIndex > x.length) { myIndex = 1 }
-		x[myIndex - 1].style.display = "block ";
-		setTimeout(carousel, 4000); // Change image every 4 seconds
-	}
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
 </script>
+
 
 	<!-- HOME SLIDER END -->
 	<!-- promotion-area start -->
@@ -264,10 +268,13 @@
 				</div>
 			</div>	
       	<!--Begin products yield-->	
+		  </br>
+		  </br>
         <%=yield%>	
       	<!--End-->
 		</div>
 	</div>
+	
 	<!-- features-area end -->
 	<!-- sale-product-area start -->
 	
@@ -280,7 +287,7 @@
 	<!-- banner-area end -->	
 	<!-- recent-post-area start -->
 	
-
+	
 	<!-- QUICKVIEW PRODUCT -->
 	<div id="quickview-wrapper ">
 		<!-- Modal -->
@@ -362,11 +369,13 @@
 		</div>
 	</div>
 	</div>
+	
 	<!-- END QUICKVIEW PRODUCT -->		
 	
 		<!-- JS -->
 		
 		<!-- jquery js -->
+			
 		<script src="/assets/jquery-1.11.2.min.js "></script>
 		
 		<!-- bootstrap js -->
@@ -398,8 +407,6 @@
 		<!-- main js -->
 		<script src="/assets/main.js "></script>
 
-
- 
 
     </body>
 

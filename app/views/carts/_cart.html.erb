@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <% unless cart.line_items.empty? %>
     <h2 style="color:#ffffff;padding-left:25%;">Your Cart</h2>
     
@@ -27,7 +28,7 @@
 </table> 
 <table class="with_2">
 <tr>
-            <th><%= button_to "Checkout", new_order_path, method: :get,:class=>"btn btn-default" %></th>
+            <th><%= button_to "Checkout", new_order_path, method: :get,:class=>"btn btn-success" %></th>
             <th><%= button_to 'Empty cart', cart, method: :delete,data: { confirm: 'Are you sure?' },:class=>"btn btn-default" %></th>
 </tr>
 </table>
@@ -35,7 +36,6 @@
 <!--css for 2 button behind-->
 <style>
 table.with_2 {
-
     margin-left: 20%;
 }
 </style>
