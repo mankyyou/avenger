@@ -7,7 +7,7 @@
 			<%= link_to gear do %>
 				<div class="col-sm-4 ">
 					<div class="offer offer-radius offer-primary">
-							<%if @date1.strftime("%m").to_i === gear.created_at.strftime("%m").to_i%>
+							<%if (Time.now.to_i - gear.created_at.to_i < 2592000 )%>
 							<img src="/assets/new.gif " width="25px " height="25px " style="margin-left:20px; ">
 						<%end%>
 								<div class="shape">
