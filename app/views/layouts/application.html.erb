@@ -104,15 +104,25 @@
 
 					<!-- slide show-->
 					<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+					<link rel="stylesheet" href="/assets/animate1.min.css">
+					
+				
 </head>
 
 <body class="home-3">
+<script>
+$('.animate').scrolla();
+$('.animate').scrolla({
+  mobile: false
+});
+$('.animate').scrolla('bind');
+</script>
+
 	<!-- Load Facebook SDK for JavaScript -->
 
 	<!-- Add your site or application content here -->
 
 	<!-- header start -->
-
 
 	<header>
 
@@ -270,10 +280,13 @@ function showDivs(n) {
       	<!--Begin products yield-->	
 		  </br>
 		  </br>
-        <%=yield%>	
+		<%=yield%>	
+	
+	
       	<!--End-->
 		</div>
 	</div>
+	
 	
 	<!-- features-area end -->
 	<!-- sale-product-area start -->
@@ -373,7 +386,7 @@ function showDivs(n) {
 	<!-- END QUICKVIEW PRODUCT -->		
 	
 		<!-- JS -->
-		
+		 <script type="text/javascript" src="delighters.js">
 		<!-- jquery js -->
 			
 		<script src="/assets/jquery-1.11.2.min.js "></script>
@@ -406,9 +419,11 @@ function showDivs(n) {
 		
 		<!-- main js -->
 		<script src="/assets/main.js "></script>
-
+		
+		<script src="jquery.min.js"></script>
+		<script src="scrolla.jquery.min.js"></script>
 
     </body>
-
+<div class="animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.1s" data-offset="100"></div>
 <!-- Tieu Long Lanh -->
 </html>

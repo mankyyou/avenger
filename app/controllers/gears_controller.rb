@@ -38,6 +38,8 @@ class GearsController < ApplicationController
     @type = Type.all
     respond_to do |format|
       if @gear.save
+        format.html { redirect_to request.referrer }
+        format.json
         format.html { redirect_to @gear, notice: "Gear was successfully created." }
         format.json { render :show, status: :created, location: @gear }
       else

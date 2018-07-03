@@ -6,7 +6,7 @@ class Gear < ApplicationRecord
   has_many :line_items
   has_many :orders, through: :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
-  validates :name, presence: true, length: {minimum: 5, maximum: 30}
+  validates :name, presence: true, length: {minimum: 5, maximum: 20}
   validates :description, presence: true, length: {minimum: 10}
   validates :image, presence: true
   validates :price, presence: true, numericality: {greater_than_or_equal_to: 1}

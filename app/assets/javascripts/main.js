@@ -330,7 +330,7 @@ $(document).ready(function(){
 	$.scrollUp({
         scrollText: '<i class="fa fa-angle-up"></i>',
         easingType: 'linear',
-        scrollSpeed: 900,
+        scrollSpeed: 200,
         animation: 'fade'
     });		 
 	 

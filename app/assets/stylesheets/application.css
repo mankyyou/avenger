@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require owl.carousel
+*= require owl.theme
  */
  input.btn.btn-primary {
   margin-left: 81%;
@@ -55,7 +57,7 @@ transition: all 0.4s ease-in-out;
 .offer-default .shape{
 	border-color: transparent #999999 transparent transparent;
 }
-.offer-primary {	border-color: #eb413e; }
+.offer-primary {	 }
 .offer-primary .shape{
 	border-color: transparent #eb413e transparent transparent;
 }

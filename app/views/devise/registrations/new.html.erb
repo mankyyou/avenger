@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -26,4 +26,9 @@
   </div>
 <% end %>
 
+<style>
+form#new_chipu {
+    display: none;
+}
+</style>
 <%= render "devise/shared/links" %>

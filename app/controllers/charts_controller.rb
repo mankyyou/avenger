@@ -1,5 +1,6 @@
 
 class ChartsController < ApplicationController
+  before_action :authenticate_chipu!
   $Alltotal = 0
 
   def show
